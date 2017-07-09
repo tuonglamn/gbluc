@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:fragment="site-head">
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="../static/css/default.css" th:href="@{/css/default.css}" />
+		<link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}" />
+		<link rel="icon" href="../static/img/favicon.ico" th:href="@{/img/favicon.ico}" />
+		<script src="../static/js/bower/requirejs/require.js" th:src="@{/js/bower/requirejs/require.js}"></script>
+		<script src="../static/js/config.js" th:src="@{/js/config.js}"></script>
+		<script src="../static/js/main.js" th:src="'/js/'+${page}+'.js'"></script>
+		<meta th:include="this::head" th:remove="tag"/>
+	</head>
+	
+	<body>
+		<div th:fragment="site-navbar" class = "top">
+			<div class="bar white padding card-2" style="letter-spacing:4px;">
+				<a href="#home">
+			    	<img class="image" src="../static/img/logo.png" th:src="@{/img/logo.png}"/>
+			    </a>
+			    <a href="javascript:void(0)" class="right button white hide-l	arge hide-medium" id ="sideBarToggle">☰</a>
+			    <!-- Right-sided navbar links. Hide them on small screens -->
+			    <div class="right hide-small">
+			      <a href="/#about" class="bar-item button">Giới thiệu</a>
+			      <a href="/#activity" class="bar-item button">Hoạt động</a>
+			      <a href="/new" class="bar-item button">Tin tức</a>
+			      <a href="/contact" class="bar-item button">Liên hệ</a>
+			    </div>
+			  </div>
+			  <nav class="sidebar bar-block animate-right top large" id="mySidebar">
+				  <a href="javascript:void()" class="bar-item button left padding-32" id="sideItem">☰</a> 
+				  <a href="/#about" class="bar-item button left padding-16" id="sideItem">Giới thiệu</a>
+				  <a href="/#activity" class="bar-item button left padding-16" id="sideItem">Hoạt động</a>
+				  <a href="/new" class="bar-item button left padding-16" id="sideItem">Tin tức</a>
+				  <a href="/contact" class="bar-item button left padding-16" id="sideItem">Liên hệ</a>
+			  </nav>
+		</div>
+		
+		<header th:fragment="site-header" id = "home" class="display-container content wide">
+			<img class="myBanners" src="banner1.jpg" th:src="@{/img/banner1.jpg}"/>
+			<img class="myBanners" src="banner2.jpg" th:src="@{/img/banner2.jpg}"/>
+			<img class="myBanners" src="banner3.jpg" th:src="@{/img/banner3.jpg}"/>
+			<img class="myBanners" src="banner4.jpg" th:src="@{/img/banner4.jpg}"/>
+		</header>
+		<div class="content">
+			<div th:fragment="site-about" class="row padding-64" id="about">
+			    <div class="col m6 padding-large hide-small">
+			    	<img src="../static/img/about.png" th:src="@{/img/about.png}" class="round image opacity-min" 
+			    		alt="Về chúng tôi" width="600" height="750"/>
+			    </div>
+	    		<div class="col m6 padding-large">
+					<h1 class="center">Về chúng tôi</h1><br/>
+				    <h5 class="center">Thân chào các bạn</h5>
+				    <p class="large">Hiện tại CLB Guitar Bến Lức đang cần tuyển thêm 
+				    				thành viên mới cho khóa IX này </p>
+				    <p class="large">Khi đến CLB các bạn sẽ được học hỏi Guitar từ 
+				    				những thành viên đam mê, nhiệt huyết vàcùng tham gia 
+				    				các buổi Offline Guitar. Ngoài ra còn nhiều hoạt động 
+				    				hấp dẫn khác.</p>
+					<p class="large">** CLB KHÔNG THU HỌC PHÍ **</p>
+					<p class="large">☑ CÁCH THỨC ĐĂNG KÝ</p>
+					<p class="large">Rất đơn giản, bạn chỉ cần tải Phiếu Đăng Ký bên dưới, 
+									sau đó chỉ cần điền đầy đủ thông tin vào form và 12h 
+									Chủ Nhật ngày (18 đến 25/06/2017) đến TTVH huyện Bến 
+									Lức để tham gia nhé.</p>
+					<p class="large">🔅 PHỤ THU</p>
+					<p class="large">Khi đến nhớ mang theo 50.000 VNĐ để đóng phụ phí 
+									(số tiền này sẽ hoàn lại nếu bạn muốn rút khỏi CLB).</p>
+	    		</div>
+  			</div>
+  			
+  			 <div th:fragment="site-activity" class="row padding-64" id="activity">
+			    <div class="col l6 padding-large">
+				    <h1 class="center">Hoạt động Câu lạc bộ</h1> 
+				    <br/>
+				    <h4>Sinh Hoạt Định Kỳ</h4>
+				    <p class="text-grey">Sinh hoạt Chủ nhật hàng tuần 12h-15h, cùng học đàn cùng tiến bộ.</p>
+				    <br/>
+				    <h4>Hoạt Động Dã Ngoại</h4>
+				    <p class="text-grey">Đi dã ngoại, vui chơi, ca hát cùng nhau vào các dịp nghỉ, lễ.</p>
+				    <br/>
+				    <h4>Sân Khấu Biểu Diễn</h4>
+				    <p class="text-grey">Học, vui xong rồi cùng biểu diễn đàn, hát thôi.</p>
+				    <br/>
+				    <h4>Hoạt Động Xã Hội</h4>
+				    <p class="text-grey">Tham gia các hoạt động xây dựng xã hội ngày một tốt hơn.</p>
+				    <br/>
+				    <h4>Hoạt Động Khác</h4>
+				    <p class="text-grey">Còn nhiều hoạt động khác rất hấp dẫn cho các bạn.</p>    
+			    </div>
+			    
+			    <div class="col l6 padding-large hide-small">
+			      <img src="../static/img/activity.jpg" th:src="@{/img/activity.jpg}" class="round image opacity-min" alt="Menu" width="500" height="750"/>
+			    </div>
+			</div>
+			
+			<div th:fragment="site-contact" class="container padding-64" id="contact">
+			    <h1>Liên hệ</h1>
+			    <br/>
+			    <div id="googleMap" class="grayscale" style="width:100%;height:400px;"></div>
+			    <br/>
+			    <p>Chúng tôi thường xuyên sinh hoạt định kỳ tại Trung tâm Văn hóa Thể Thao Huyện 
+			    	Bến Lức vào lúc 12 giờ - 15 giờ ngày Chủ Nhật hàng tuần. Các bạn có thể đến 
+			    	liên hệ với CLB chúng tôi tại địa điểm này:</p>
+			    
+			    <p class="text-blue-grey large"><b>Trung Tâm Văn Hóa Thể Thao Huyện Bến Lức, Nguyễn Hữu Thọ, TT.Bến Lức, Huyện Bến Lức, Tỉnh Long An</b></p>
+			    <p>Các bạn cũng có thể liên hệ với chúng tôi qua email guitarbenluc@gmail.com hoặc Facebook: 
+			    	<a href="https://www.facebook.com/Guitar-Club-Bến-Lức-651642385009828/" 
+			    		title="CLB Guitar Bến Lức" target="_blank" class="hover-text-green">CLB Guitar Bến Lức</a></p>
+  			</div>
+		</div>
+		
+		<footer th:fragment="site-footer" class="center light-grey padding-32">
+				<p> &copy; <a href="https://www.facebook.com/Guitar-Club-Bến-Lức-651642385009828/" title="CLB Guitar Bến Lức" target="_blank" class="hover-text-green">CLB Guitar Bến Lức</a>, 2017. 
+				Thiết kế và Xây dựng Website bởi <a href="https://www.facebook.com/tuonglamn/" title="Nguyễn Tường Lam" target="_blank" class="hover-text-green">Nguyễn Tường Lam</a>.</p>
+		</footer>
+		
+		<div th:fragment="site-maintenance">
+			<img class="image" src="../static/img/maintenance.png" th:src="@{/img/maintenance.png}"/>
+		</div>
+		
+	</body>
+</html>

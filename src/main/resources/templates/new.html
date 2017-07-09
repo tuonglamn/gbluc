@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="layout :: site-head">
+		<title>Guitar Bến Lức</title>
+	</head>
+	<body>
+		<div>
+			<div th:replace="layout::site-navbar"></div>
+			<div class="content">
+				<div th:replace="layout::site-maintenance"></div>	
+			</div>
+		</div>
+		<footer th:replace="layout::site-footer"></footer>
+	</body>
+</html>
